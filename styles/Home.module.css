@@ -427,6 +427,11 @@
 	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
 }
 
+.audio{
+  position:sticky;
+  box-sizing: border-box;
+}
+
 /* .player1{
   
   
