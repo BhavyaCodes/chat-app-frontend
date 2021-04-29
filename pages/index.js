@@ -3,6 +3,12 @@ import styles from '../styles/Home.module.css'
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import UsernameField from "../components/UsernameField";
+import 'emoji-mart/css/emoji-mart.css';
+import { Picker } from 'emoji-mart';
+
+// import { Editor } from "@tinymce/tinymce-react";
+
+
 
 
 
@@ -80,6 +86,11 @@ export default function Home() {
     socket.emit("message-submitted", { message, username });
     setMessage("");
   };
+
+
+  // handleChange(content, editor); {
+  //   this.setState({content});
+  // }
 //  const websocket=require("ws") 
 //   const rooms = {};
 
@@ -123,16 +134,17 @@ export default function Home() {
 
   return (
     
-
-  
-    
    <div className={styles.chat_window}>
       <Head>
+      
         <title >chit-chat</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <embed src="https://www.youtube.com/watch?v=32oQrjSCUTw&t=4s" loop="true" autostart="true" width="2" height="0"></embed>
+    
 
+      </Head>
+
+      
+      {/* <audio className={styles.audio} src="/Users/tanyaprabhakar/Downloads/Mahmut Orhan - Game Of Thrones (Original Mix).mp3" loop="true" autostart="true" width="2" height="0"></embed></audio> */}
+      
       
       <h1 className={styles.top_menu}className={styles.text}> Game of thrones </h1>
 
@@ -159,10 +171,26 @@ export default function Home() {
         <div className={styles.bottom_wrapper .message_input_wrapper}>
           <main className={styles.bottom_wrapper}>
           
-          <form  onSubmit={handleSubmit}>
+          
+          
+          
+          <form  onSubmit={handleSubmit} >
+          {/* <Editor
+      value={this.useState.content}
+      init={{
+      height: 500,
+      menubar: false
+    }}
+      onEditorChange={this.handleChange}
+      />
+    <br />
+           */}
+      
+    
           <label >
             
             <input className={styles.message_input}
+              id="textarea"
               type="text"
               name="message"
               value={message}
